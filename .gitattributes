@@ -1,0 +1,2 @@
+*.py linguist-language=Python
+*.css linguist-hidden=true

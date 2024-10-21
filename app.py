@@ -16,6 +16,7 @@ class ToDo(db.Model):
         return f"<ToDo {self.id}>"
 
 
+
 @app.route('/',methods=['POST','GET'])
 def index():
     if request.method=='POST':
@@ -32,7 +33,9 @@ def index():
     else:
         tasks= ToDo.query.order_by(ToDo.date_created).all()
         return render_template('index.html',tasks=tasks)
-    
+
+
+
 @app.route('/delete/<int:id>',methods=['POST','GET'])
 def delete(id):
     task_to_delete=ToDo.query.get_or_404(id)
@@ -43,6 +46,8 @@ def delete(id):
         return redirect('/')
     except:
         return 'There is an issue while deleting task'
+
+
 
 @app.route('/update/<int:id>', methods=['POST','GET'])
 def update(id):
