@@ -65,7 +65,6 @@ def update(id):
     else:
         return render_template('update.html',task=task)
 
-    
        
 
 if __name__=="__main__":
