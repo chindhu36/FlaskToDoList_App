@@ -52,17 +52,17 @@ This is a simple Flask-based web application for managing tasks in a to-do list.
 ### Project Structure
 
     .
-├── app.py                  # Main application file
-├── templates/              # HTML templates for rendering the web pages
-│   ├── index.html          # Home page
-│   ├── base.html           # Base HTML file
-│   └── update.html         # Update task page
-├── static/                 # Static files (CSS, JS, images)
-│   └── main.css            # Basic CSS for styling
-├── requirements.txt        # Python dependencies
-├── Dockerfile              # Docker configuration file
-├── docker-compose.yml      # Docker Compose configuration file
-└── README.md               # Project documentation
+    ├── app.py                  # Main application file
+    ├── templates/              # HTML templates for rendering the web pages
+    │   ├── index.html          # Home page
+    │   ├── base.html           # Base HTML file
+    │   └── update.html         # Update task page
+    ├── static/                 # Static files (CSS, JS, images)
+    │   └── main.css            # Basic CSS for styling
+    ├── requirements.txt        # Python dependencies
+    ├── Dockerfile              # Docker configuration file
+    ├── docker-compose.yml      # Docker Compose configuration file
+    └── README.md               # Project documentation
 
 
 ## API Endpoints
