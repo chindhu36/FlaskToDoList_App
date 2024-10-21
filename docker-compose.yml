@@ -1,0 +1,15 @@
+version: '3.8'  # You can omit this line if using a more recent version
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - DATABASE_URL=sqlite:///test.db  # Adjust this if you use a different DB name
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+
+volumes:
+  db_data:  # Uncomment if you're using a named volume for SQLite (if applicable)

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <h1>Task List</h1>
+{% endblock %}
+
+{% block body %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>TASK</th>
+                <th>ACTIONS</th>
+                <th>ADDED</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.content }}</td>
+                    <td>{{ task.date_created.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>
+                        <a href="{{ url_for('update', id=task.id) }}">
+                            <button type="button">Update</button>
+                        </a>
+                        <form action="{{ url_for('delete', id=task.id) }}" method="post" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+        <form action="/" method="post">
+            <input type="text" name="content" placeholder="Enter your task" required>
+            <button type="submit">Add Task</button>
+        </form>
+{% endblock %}
